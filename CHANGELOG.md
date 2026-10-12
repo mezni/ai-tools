@@ -25,6 +25,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - None
 
+## 0.1.3 - 2026-10-12
+
+### Added
+- priority module with deterministic ticket urgency assessment
+- assess_priority() function with ordered keyword rules (critical, high, medium, low)
+- Input validation and reason generation
+- 9 pytest tests covering all priority levels, rule precedence, and invalid input
+- Ruff configuration for linting and formatting
+
+### Changed
+- pyproject.toml: Added pytest and ruff configuration
+- LOG.md: Development tracking structure
+
+### Fixed
+- None
+
 ## 0.1.2 - 2026-10-12
 
 ### Added

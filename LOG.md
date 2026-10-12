@@ -30,4 +30,22 @@ Quality Checks: uv run pytest -v, uv run ruff check ., and uv run ruff format --
 
 Status: Completed
 
-Next Step: Integrate classifier into agent orchestrator.
+## Step 3: Add Ticket Priority Scoring
+
+Component/Step: Priority Engine.
+
+Goal: Determine the urgency of support tickets using deterministic Python rules.
+
+Problem/Friction: Ticket classification identifies the type of issue but does not determine how urgently it should be handled.
+
+Solution: Implemented assess_priority() in src/ticket_triage/priority.py. The function checks ordered keyword rules and returns a priority (low, medium, high, or critical) with an explanation.
+
+Trade-offs: Chose ordered keyword rules over machine learning or an LLM for simplicity, explainability, and reproducible results. The approach cannot reliably infer urgency from context and may miss unfamiliar wording. The initial rules require future refinement against real support policies.
+
+Tests: Added pytest cases for each priority level, rule precedence, empty input, and invalid input. All 9 tests pass.
+
+Quality Checks: uv run pytest -v, uv run ruff check ., and uv run ruff format --check .. All checks pass.
+
+Status: Completed
+
+Next Step: Implement response generation and integrate classification and priority into a unified ticket-processing workflow.
