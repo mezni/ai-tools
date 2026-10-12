@@ -1,18 +1,29 @@
-.venv/
+# Python bytecode
 __pycache__/
-*.py[cod]
+*.pyc
+*.pyo
+*.pyd
 
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-
-/site/
-
+# Environment variables
 .env
 
-*.log
+# uv lock file (managed separately)
+.venv/
+uv.lock
 
-.DS_Store
-
+# IDE files
+.vscode/
 .idea/
-.vscode/data/*.db
+
+# Distribution / packaging
+dist/
+build/
+egg-info/
+
+# pytest
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Ruff cache
+.ruff_cache/
