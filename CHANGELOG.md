@@ -25,7 +25,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - None
 
-## 0.1.0 - 2026-10-12
+## 0.1.2 - 2026-10-12
+
+### Added
+- classifier module with rule-based ticket categorization
+- Input validation and entity extraction
+- Keyword-based category detection (order_status, billing, account, technical, general)
+- Structured output with category, order_id, and needs_order_lookup fields
+- 9 pytest tests covering normal cases, edge cases, and invalid input
+- Ruff configuration for linting and formatting
+
+### Changed
+- pyproject.toml: Added pytest and ruff configuration
+- LOG.md: Development tracking structure
+
+### Fixed
+- None
+
+## 0.1.1 - 2026-10-12
 
 ### Added
 - Initial project structure

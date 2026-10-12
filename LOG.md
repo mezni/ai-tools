@@ -12,15 +12,22 @@
 
 **Status:** Completed
 
-## Active Work
+## Step 2: Implement Ticket Classification
 
-**Current Focus:** Project initialization using plain Python and uv.
+Component/Step: Ticket classification and structured extraction.
 
-**Code State:** Python project initialized; development tracking established.
+Goal: Convert plain-text support tickets into structured data for downstream agent components.
 
-## Next Steps
+Problem/Friction: Ticket descriptions are unstructured. The application needs to identify the category, extract an order ID, and determine whether an order lookup is necessary.
 
-1. Implement ticket data validation.
-2. Implement rule-based ticket classification.
-3. Extract order IDs and determine lookup requirements.
-4. Add automated tests.
+Solution: Implemented classify_ticket() in src/ticket_triage/classifier.py. The function validates input, extracts numeric order IDs using regular expressions, classifies tickets using keyword rules, and returns a dictionary with category, order_id, and needs_order_lookup.
+
+Trade-offs: Chose deterministic keyword-based rules over an LLM to make the initial implementation predictable, easy to debug, and inexpensive. The approach has limited semantic understanding and can misclassify ambiguous descriptions.
+
+Tests: Added pytest coverage for order classification, missing order IDs, billing, account issues, general tickets, and invalid input. All 9 tests pass.
+
+Quality Checks: uv run pytest -v, uv run ruff check ., and uv run ruff format --check .. All checks pass.
+
+Status: Completed
+
+Next Step: Integrate classifier into agent orchestrator.
