@@ -1,0 +1,7 @@
+{
+  "name": "code_refactor",
+  "version": "1.0.0",
+  "description": "Refactors source code for cleanliness and optimization.",
+  "variables": ["language", "code"],
+  "template": "You are an expert {language} software engineer. Refactor the following code to improve performance and readability, and adhere to best practices:\n\n```{language}\n{code}\n```\n\nProvide the refactored code block followed by a brief summary of changes."
+}
