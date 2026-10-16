@@ -1,0 +1,37 @@
+default_provider: "openai"
+default_model: "gpt-4o"
+default_temperature: 0.7
+
+providers:
+  openai:
+    enabled: true
+    default_model: "gpt-4o"
+    models:
+      gpt-4o:
+        description: "Flagship model for complex tasks"
+        max_tokens: 4096
+      gpt-4o-mini:
+        description: "Fast, lightweight model for high-throughput tasks"
+        max_tokens: 4096
+
+  anthropic:
+    enabled: true
+    default_model: "claude-3-5-sonnet-20241022"
+    models:
+      claude-3-5-sonnet-20241022:
+        description: "Best for coding and complex reasoning"
+        max_tokens: 8192
+      claude-3-5-haiku-20241022:
+        description: "Ultra-fast response model"
+        max_tokens: 4096
+
+  gemini:
+    enabled: true
+    default_model: "gemini-2.5-flash"
+    models:
+      gemini-2.5-flash:
+        description: "Fast multimodal general model"
+        max_tokens: 8192
+      gemini-2.5-pro:
+        description: "Advanced deep reasoning model"
+        max_tokens: 8192
